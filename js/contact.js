@@ -1,45 +1,43 @@
 $(function () {
     'use strict';
 
-    // init the validator
-    // validator files are included in the download package
-    // otherwise download from http://1000hz.github.io/bootstrap-validator
+    const contactForm = $('#contact-form');
+    const messages = contactForm.find('.messages');
+    let alertBox;
 
-    $('#contact-form').validator();
+    contactForm.validator();
 
+    contactForm.on('submit', function (e) {
 
-    // when the form is submitted
-    $('#contact-form').on('submit', function (e) {
-
-        // if the validator does not prevent form submit
         if (!e.isDefaultPrevented()) {
-            var url = "contact.php";
+            alertBox = '<div class="alert alert-info alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + 'Enviando mensaje...' + '</div>';
+            messages.html(alertBox);
 
-            // POST values in the background the the script URL
-            $.ajax({
-                type: "POST",
-                url: url,
-                data: $(this).serialize(),
-                success: function (data)
-                {
-                    // data = JSON object that contact.php returns
+            const email = $('#form_email').val();
+            let subject = $('#form_name').val();
+            let body = '<strong>'+ subject+'</strong> '+' te ha escrito desde:  '+'<strong>'+ email +'</strong>' +
+                 '<br><hr><br><br>'+
+                $('#form_message').val();
 
-                    // we recieve the type of the message: success x danger and apply it to the 
-                    var messageAlert = 'alert-' + data.type;
-                    var messageText = data.message;
-
-                    // let's compose Bootstrap alert box HTML
-                    var alertBox = '<div class="alert ' + messageAlert + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
-                    
-                    // If we have messageAlert and messageText
-                    if (messageAlert && messageText) {
-                        // inject the alert to .messages div in our form
-                        $('#contact-form').find('.messages').html(alertBox);
-                        // empty the form
-                        $('#contact-form')[0].reset();
+            Email.send({
+                SecureToken : "ed761491-38bf-4711-8485-8e48bbc9e90e",
+                To : 'contacto@yuliamz.tech',
+                From : "contacto@yuliamz.tech",
+                Subject : subject,
+                Body : body
+            }).then(
+                message => {
+                    messages.remove('.alert-primary');
+                    if (message==='OK'){
+                         alertBox = '<div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + 'Gracias por escribirme, me pondre en contacto contigo pronto' + '</div>';
+                        contactForm[0].reset();
+                    }else {
+                         alertBox = '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + 'Lo siento, no estoy disponible ahora mismo, puedes escribirme directamente a contacto@yuliamz.tech' + '</div>';
                     }
+                    messages.html(alertBox);
                 }
-            });
+            );
+
             return false;
         }
     })
