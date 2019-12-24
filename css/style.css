@@ -102,7 +102,7 @@ img {
 .line-one {
     height: 1px;
     width: 100px;
-    background: #E91E63;
+    background: #5125d7;
     display: block;
     margin: 0 auto;
     padding: 0;
@@ -132,7 +132,7 @@ img {
 
 .loader:before, .loader:after {
     content: '';
-    border: 1em solid #E91E63;
+    border: 1em solid #5125d7;
     border-radius: 50%;
     width: inherit;
     height: inherit;
@@ -275,7 +275,7 @@ img {
 }
 
 .sticky_navigation .navbar-brand:hover, .sticky_navigation .navbar-brand:focus, .sticky_navigation .navbar-brand span {
-    color: #E91E63;
+    color: #5125d7;
 }
 
 .sticky_navigation .nav li a {
@@ -283,19 +283,19 @@ img {
 }
 
 .sticky_navigation .nav li.active a{
-    color: #E91E63;
+    color: #5125d7;
 
 }
 
 .sticky_navigation .nav li.active::before {
-    border-top: 1px solid #E91E63;
+    border-top: 1px solid #5125d7;
     content: "";
     display: block;
     margin: 0 auto;
     width: 50%;
 }
 .sticky_navigation .nav li.active::after {
-    border-bottom: 1px solid #E91E63;
+    border-bottom: 1px solid #5125d7;
     content: "";
     display: block;
     margin: 0 auto;
@@ -431,7 +431,7 @@ canvas{
 }
 
 .banner-btn {
-    background: #E91E63;
+    background: #5125d7;
     text-decoration: none;
     padding: 10px 30px;
     display: inline-block;
@@ -486,7 +486,7 @@ canvas{
     color: #fff;
     font-size: 14px;
     text-transform: uppercase;
-    background: #E91E63;
+    background: #5125d7;
     padding: 15px;
     float: right;
     text-decoration: none;
@@ -550,7 +550,7 @@ canvas{
 
 .services-icon i {
 	font-size: 35px;
-	color: #E91E63;
+	color: #5125d7;
 }
 
 .single-services:hover i{
@@ -609,7 +609,7 @@ canvas{
 }
 
 .single-services:hover .services-content h3 {
-	color: #E91E63;
+	color: #5125d7;
 }
 
 /*--------------- Services area ends --------------*/
@@ -617,7 +617,7 @@ canvas{
 /*-------- 8. Number area css starts-----------*/
 
 .number-area {
-	background: #E91E63;
+	background: #5125d7;
 	color: #fff;
 }
 
@@ -642,7 +642,7 @@ canvas{
 .por-text-details .col-xs-4 p {
 	font-weight: bold;
 	text-transform: uppercase;
-	color: #E91E63;
+	color: #5125d7;
 }
 
 .mfp-zoom-out .mfp-with-anim {
@@ -683,7 +683,7 @@ canvas{
 	margin: 0;
 	font-size: 22px;
 	margin-bottom: 15px;
-	border-bottom: 3px solid #E91E63;
+	border-bottom: 3px solid #5125d7;
 	padding-bottom: 10px;
 }
 
@@ -709,7 +709,7 @@ canvas{
 	position: relative;
 	text-align: center;
 	cursor: pointer;
-	background: rgba(233,30,99,0.9);
+	background: rgba(70, 30, 233, 0.9);
 }
 
 .hovereffect .overlay {
@@ -849,7 +849,7 @@ canvas{
 .block-quote h2 {
 	text-transform: uppercase;
 	font-size: 25px;
-	color: #E91E63;
+	color: #5125d7;
 }
 
 .block-quote h3 {
@@ -900,7 +900,7 @@ canvas{
 
 .single-contact i {
     font-size: 30px;
-    color: #E91E63;
+    color: #5125d7;
 }
 
 .single-contact .socials i {
@@ -938,7 +938,7 @@ canvas{
 }
 
 .btn.btn-send {
-    background: #E91E63;
+    background: #5125d7;
     color: #ffffff;
     padding: 15px 20px;
     text-transform: uppercase;
